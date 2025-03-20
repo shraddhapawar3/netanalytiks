@@ -79,8 +79,13 @@ public class FirebaseDB implements Database, ValueEventListener {
     /**
      * This method is used to notify rental company that driver of this car has crossed the
      * specified speed limit.
+     * @param currentCarSpeed - The current speed of the car.
+     * @param time - The time when speed limit was crossed.
      */
-    public static void notifySpeedLimitCrossed() {
-        //Call Firebase API to send a warning message to server to notify a rental company
+    public static void notifySpeedLimitCrossed(float currentCarSpeed, long time) {
+        //Call Firebase API to send current car speed along with the time to inform to rental
+        // company, if request fails then retry should be implemented and data should
+        // be saved until it is successfully sent to the backend. Data can be saved in offline DB
+        // like SQLite or Room DB.
     }
 }

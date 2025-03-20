@@ -103,6 +103,6 @@ public class CarViewModel extends ViewModel {
     private void notifySpeedLimitWarning() {
         //Update UI with warning by creating a dialog or a Toast.
         Log.w(TAG, "Speed limit crossed. Allowed speed limit is " + carSpeedLimit);
-        FirebaseDB.notifySpeedLimitCrossed();
+        FirebaseDB.notifySpeedLimitCrossed(carSpeed, System.currentTimeMillis());
     }
 }
